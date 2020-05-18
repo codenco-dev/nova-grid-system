@@ -1,4 +1,4 @@
-#Nova grid system for Laravel Nova
+# Nova grid system for Laravel Nova
 
 ## Install
 
@@ -185,6 +185,15 @@ To publish it, you can use this command:
 ```
 php artisan vendor:publish --tag="nova-grid-system"
 ```  
+
+
+## Screenshots
+
+![Creating form](https://user-images.githubusercontent.com/17202290/82239889-ca091580-9939-11ea-9b45-aeff0e26db4a.png)
+
+![Updating form](https://user-images.githubusercontent.com/17202290/82239901-cbd2d900-9939-11ea-8c2e-60d31f1daa33.png)
+
+![Detail page](https://user-images.githubusercontent.com/17202290/82239906-cd9c9c80-9939-11ea-9281-18293f8e7447.png)
 
 ## License
 
