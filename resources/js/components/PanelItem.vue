@@ -2,7 +2,7 @@
     <div :class="elementSize">
         <field-wrapper :stacked="field.stacked">
             <div class="" :class="field.stacked ? 'pt-6 w-full' : 'py-4 w-1/4'">
-                <slot>ssss
+                <slot>
                     <h4 class="font-normal text-80">{{ label }}</h4>
                 </slot>
             </div>
