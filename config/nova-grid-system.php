@@ -12,7 +12,7 @@ return [
     */
     'nova_grid_system_enabled' => true, //desactive
 
-    'stacked_scope' => [ //si true, dès qu'on utilise sizeX cela stacked les labels selon le scope
+    'stacked_scope' => [ //if that's true, as soon as we use sizeX, it stacks the labels based on the scope
         'creating' => true,
         'detail' => true,
         'updating' => true,
@@ -28,9 +28,9 @@ return [
         'updating' => true,
     ],
     'detail' => [
-        'size' => true, //la size fonctionne en mode detail en utilisant size (si celui d'en dessous est à true : c'est la merde ici) ou sizeOnDetails
-        'remove_bottom_border' => true, //on peut supprimer les bottomBorder sur détail
-        'stacked' => true, //on peut utiliser la methode sur le detail
+        'size' => true, //If true, size method works on Detail Page automatically. If false, you should tu use sizeOnDetails method
+        'remove_bottom_border' => true, //If true, removeBottomBorder works on Detail Page
+        'stacked' => true, //If true, stacks is automatic
     ],
     'creating' => [
         'size' => true,
