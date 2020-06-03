@@ -28073,7 +28073,6 @@ var render = function() {
           { class: _vm.field.stacked ? "pt-6 w-full" : "py-4 w-1/4" },
           [
             _vm._t("default", [
-              _vm._v("ssss\n                "),
               _c("h4", { staticClass: "font-normal text-80" }, [
                 _vm._v(_vm._s(_vm.label))
               ])
