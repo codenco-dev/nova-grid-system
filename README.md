@@ -1,4 +1,4 @@
-# Nova grid system for Laravel Nova
+#Nova grid system for Laravel Nova
 
 ## Install
 
@@ -177,23 +177,36 @@ This code presents several configurations depending on the context and uses diff
 ```
 
 
+### Play with default values
+Do you want go fast to configure your app ?
+With the `HasDefaultSize` trait, you can use defined default values.
+
+You can use this trait in each resource where you want or on the `App\Nova\Resource` file if you want have default 
+values on each resource automatically.
+
+
+You be able to define default values on several ways : 
+- by defining this on config file
+- by creating different methods acting, as the case may be (detail, creating, updating) like this : 
+
+```
+public function defaultFieldSize()
+{
+    return 'w-1/8';
+}
+```
+
+Methods can be : `defaultFieldSize`,`defaultFieldSizeOnDetail`,`defaultFieldSizeOnCreating`,`defaultFieldSizeOnUpdating`.
+
 ### Configuration
 
 You can disable each "automatic" feature for each type of page with the `nova-grid-system.php` config file.
+You can define default sizes for every fields.
 To publish it, you can use this command:
 
 ```
 php artisan vendor:publish --tag="nova-grid-system"
 ```  
-
-
-## Screenshots
-
-![Creating form](https://user-images.githubusercontent.com/17202290/82239889-ca091580-9939-11ea-9b45-aeff0e26db4a.png)
-
-![Updating form](https://user-images.githubusercontent.com/17202290/82239901-cbd2d900-9939-11ea-8c2e-60d31f1daa33.png)
-
-![Detail page](https://user-images.githubusercontent.com/17202290/82239906-cd9c9c80-9939-11ea-9281-18293f8e7447.png)
 
 ## License
 

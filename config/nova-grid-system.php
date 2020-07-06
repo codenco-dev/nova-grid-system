@@ -41,5 +41,10 @@ return [
         'size' => true,
         'remove_bottom_border' => true,
         'stacked' => true,
+    ],
+    'default_size' => [
+        'detail' => 'w-full',
+        'creating' => 'w-full',
+        'updating' => 'w-full',
     ]
 ];
