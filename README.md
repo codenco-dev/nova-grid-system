@@ -186,7 +186,7 @@ values on each resource automatically.
 
 
 You be able to define default values on several ways : 
-- by defining this on config file
+- by defining their on config file
 - by creating different methods acting, as the case may be (detail, creating, updating) like this : 
 
 ```
