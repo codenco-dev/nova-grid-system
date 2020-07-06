@@ -65,7 +65,335 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "../../node_modules/laravel-nova/dist/index.js":
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/DefaultField.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__("./node_modules/laravel-nova/dist/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"]],
+
+    props: {
+        field: { type: Object, required: true },
+        fieldName: { type: String },
+        showHelpText: { type: Boolean, default: true },
+        showErrors: { type: Boolean, default: true },
+        fullWidthContent: { type: Boolean, default: false }
+    },
+
+    mounted: function mounted() {
+        // If field has a size, this allows to use flex on card
+        if (this.hasSize) {
+            this.$parent.$parent.$el.classList.add('flex-wrap');
+            this.$parent.$parent.$el.classList.add('flex');
+            if (document.getElementsByClassName('relationship-tabs-panel')) {
+                console.log(document.getElementsByClassName('relationship-tabs-panel'));
+                this.$parent.$el.classList.add('flex');
+                this.$parent.$parent.$parent.$parent.$el.classList.add('flex');
+            } else {
+                console.log('t');
+            }
+        } else {
+            console.log('h');
+        }
+
+        if (this.getRemoveBottomBorder === true) {
+            this.$el.children[0].classList.add('remove-bottom-border');
+        } else if (this.getRemoveBottomBorder === false) {
+            this.$el.children[0].classList.remove('remove-bottom-border');
+        }
+    },
+
+
+    computed: {
+        /**
+         * Return the label that should be used for the field.
+         */
+        fieldLabel: function fieldLabel() {
+            // If the field name is purposefully an empty string, then let's show it as such
+            if (this.fieldName === '') {
+                return '';
+            }
+
+            return this.fieldName || this.field.name || this.field.singularLabel;
+        },
+
+
+        /**
+         * Return the classes that should be used for the field content.
+         */
+        fieldClasses: function fieldClasses() {
+            return this.fullWidthContent ? this.field.stacked ? 'w-full' : 'w-4/5' : this.hasSize ? 'w-full' : 'w-1/2';
+        },
+
+
+        /**
+         * Return the size that should be used for the field container.
+         */
+        elementSize: function elementSize() {
+            return this.field.size || 'w-full';
+        },
+
+
+        /**
+         * Return if the field has a size
+         */
+        hasSize: function hasSize() {
+            return this.field.size !== undefined;
+        },
+
+
+        /**
+         * Return if we must to remove or not the bottom border field
+         */
+        getRemoveBottomBorder: function getRemoveBottomBorder() {
+            return this.field.removeBottomBorder || null;
+        }
+    }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/Detail/HeadingField.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['resource', 'resourceName', 'resourceId', 'field'],
+
+  mounted: function mounted() {
+    this.$el.classList.add('w-full');
+  },
+
+
+  computed: {
+    fieldValue: function fieldValue() {
+      if (this.field.value === '' || this.field.value === null || this.field.value === undefined) {
+        return false;
+      }
+
+      return String(this.field.value);
+    },
+    shouldDisplayAsHtml: function shouldDisplayAsHtml() {
+      return this.field.asHtml;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/Form/HeadingField.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    resourceName: {
+      type: String,
+      require: true
+    },
+    field: {
+      type: Object,
+      require: true
+    }
+  },
+
+  created: function created() {
+    this.field.fill = function () {};
+  },
+  mounted: function mounted() {
+    this.$el.classList.add('w-full');
+  },
+
+
+  computed: {
+    classes: function classes() {
+      return ['bg-20', 'remove-last-margin-bottom', 'leading-normal', 'w-full', 'py-4', 'px-8'];
+    },
+
+    shouldDisplayAsHtml: function shouldDisplayAsHtml() {
+      return this.field.asHtml || false;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/PanelItem.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        field: {
+            type: Object,
+            required: true
+        },
+        fieldName: {
+            type: String,
+            default: ''
+        }
+    },
+    mounted: function mounted() {
+        // If field has a size, this allows to use flex on card
+        if (this.hasSize) {
+            this.$parent.$parent.$el.classList.add('flex-wrap');
+            this.$parent.$parent.$el.classList.add('flex');
+            if (document.getElementsByClassName('relationship-tabs-panel')) {
+                console.log(document.getElementsByClassName('relationship-tabs-panel'));
+                console.log(this.$parent.$parent.$el);
+                document.getElementsByClassName('relationship-tabs-panel').item(0).classList.add('w-full');
+                this.$parent.$el.parentElement.classList.add('flex');
+            } else {
+                console.log('t');
+            }
+        } else {
+            console.log('h');
+        }
+        if (this.getRemoveBottomBorder === true) {
+            this.$el.children[0].classList.add('remove-bottom-border');
+        } else if (this.getRemoveBottomBorder === false) {
+            this.$el.children[0].classList.remove('remove-bottom-border');
+        }
+    },
+
+    computed: {
+        label: function label() {
+            return this.fieldName || this.field.name;
+        },
+        fieldValue: function fieldValue() {
+            if (this.field.value === '' || this.field.value === null || this.field.value === undefined) {
+                return false;
+            }
+
+            return String(this.field.value);
+        },
+        shouldDisplayAsHtml: function shouldDisplayAsHtml() {
+            return this.field.asHtml;
+        },
+        fieldClasses: function fieldClasses() {
+            return this.fullWidthContent ? this.field.stacked ? 'w-full' : 'w-4/5' : this.hasSize ? 'w-full' : 'w-3/4';
+        },
+
+
+        /**
+         * Return the size that should be used for the field container.
+         */
+        elementSize: function elementSize() {
+            return this.field.size || 'w-full';
+        },
+
+
+        /**
+         * Return if the field has a size
+         */
+        hasSize: function hasSize() {
+            return this.field.size !== undefined;
+        },
+        getRemoveBottomBorder: function getRemoveBottomBorder() {
+            return this.field.removeBottomBorder || null;
+        }
+    }
+});
+
+/***/ }),
+
+/***/ "./node_modules/laravel-nova/dist/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -27468,315 +27796,6 @@ if (hadRuntime) {
 
 /***/ })
 /******/ ]);
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/DefaultField.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__("../../node_modules/laravel-nova/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"]],
-
-    props: {
-        field: { type: Object, required: true },
-        fieldName: { type: String },
-        showHelpText: { type: Boolean, default: true },
-        showErrors: { type: Boolean, default: true },
-        fullWidthContent: { type: Boolean, default: false }
-    },
-
-    mounted: function mounted() {
-        // If field has a size, this allows to use flex on card
-        if (this.hasSize) {
-            this.$parent.$parent.$el.classList.add('flex-wrap');
-            this.$parent.$parent.$el.classList.add('flex');
-        }
-
-        if (this.getRemoveBottomBorder === true) {
-            this.$el.children[0].classList.add('remove-bottom-border');
-        } else if (this.getRemoveBottomBorder === false) {
-            this.$el.children[0].classList.remove('remove-bottom-border');
-        }
-    },
-
-
-    computed: {
-        /**
-         * Return the label that should be used for the field.
-         */
-        fieldLabel: function fieldLabel() {
-            // If the field name is purposefully an empty string, then let's show it as such
-            if (this.fieldName === '') {
-                return '';
-            }
-
-            return this.fieldName || this.field.name || this.field.singularLabel;
-        },
-
-
-        /**
-         * Return the classes that should be used for the field content.
-         */
-        fieldClasses: function fieldClasses() {
-            return this.fullWidthContent ? this.field.stacked ? 'w-full' : 'w-4/5' : this.hasSize ? 'w-full' : 'w-1/2';
-        },
-
-
-        /**
-         * Return the size that should be used for the field container.
-         */
-        elementSize: function elementSize() {
-            return this.field.size || 'w-full';
-        },
-
-
-        /**
-         * Return if the field has a size
-         */
-        hasSize: function hasSize() {
-            return this.field.size !== undefined;
-        },
-
-
-        /**
-         * Return if we must to remove or not the bottom border field
-         */
-        getRemoveBottomBorder: function getRemoveBottomBorder() {
-            return this.field.removeBottomBorder || null;
-        }
-    }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/Detail/HeadingField.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['resource', 'resourceName', 'resourceId', 'field'],
-
-  mounted: function mounted() {
-    this.$el.classList.add('w-full');
-  },
-
-
-  computed: {
-    fieldValue: function fieldValue() {
-      if (this.field.value === '' || this.field.value === null || this.field.value === undefined) {
-        return false;
-      }
-
-      return String(this.field.value);
-    },
-    shouldDisplayAsHtml: function shouldDisplayAsHtml() {
-      return this.field.asHtml;
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/Form/HeadingField.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    resourceName: {
-      type: String,
-      require: true
-    },
-    field: {
-      type: Object,
-      require: true
-    }
-  },
-
-  created: function created() {
-    this.field.fill = function () {};
-  },
-  mounted: function mounted() {
-    this.$el.classList.add('w-full');
-  },
-
-
-  computed: {
-    classes: function classes() {
-      return ['bg-20', 'remove-last-margin-bottom', 'leading-normal', 'w-full', 'py-4', 'px-8'];
-    },
-
-    shouldDisplayAsHtml: function shouldDisplayAsHtml() {
-      return this.field.asHtml || false;
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/PanelItem.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        field: {
-            type: Object,
-            required: true
-        },
-        fieldName: {
-            type: String,
-            default: ''
-        }
-    },
-    mounted: function mounted() {
-        // If field has a size, this allows to use flex on card
-        if (this.hasSize) {
-            this.$parent.$parent.$el.classList.add('flex-wrap');
-            this.$parent.$parent.$el.classList.add('flex');
-        }
-        if (this.getRemoveBottomBorder === true) {
-            this.$el.children[0].classList.add('remove-bottom-border');
-        } else if (this.getRemoveBottomBorder === false) {
-            this.$el.children[0].classList.remove('remove-bottom-border');
-        }
-    },
-
-    computed: {
-        label: function label() {
-            return this.fieldName || this.field.name;
-        },
-        fieldValue: function fieldValue() {
-            if (this.field.value === '' || this.field.value === null || this.field.value === undefined) {
-                return false;
-            }
-
-            return String(this.field.value);
-        },
-        shouldDisplayAsHtml: function shouldDisplayAsHtml() {
-            return this.field.asHtml;
-        },
-        fieldClasses: function fieldClasses() {
-            return this.fullWidthContent ? this.field.stacked ? 'w-full' : 'w-4/5' : this.hasSize ? 'w-full' : 'w-3/4';
-        },
-
-
-        /**
-         * Return the size that should be used for the field container.
-         */
-        elementSize: function elementSize() {
-            return this.field.size || 'w-full';
-        },
-
-
-        /**
-         * Return if the field has a size
-         */
-        hasSize: function hasSize() {
-            return this.field.size !== undefined;
-        },
-        getRemoveBottomBorder: function getRemoveBottomBorder() {
-            return this.field.removeBottomBorder || null;
-        }
-    }
 });
 
 /***/ }),

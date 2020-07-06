@@ -52,6 +52,15 @@
             if(this.hasSize) {
                 this.$parent.$parent.$el.classList.add('flex-wrap')
                 this.$parent.$parent.$el.classList.add('flex')
+                if(document.getElementsByClassName('relationship-tabs-panel')){
+                    console.log(document.getElementsByClassName('relationship-tabs-panel'))
+                    this.$parent.$el.classList.add('flex')
+                    this.$parent.$parent.$parent.$parent.$el.classList.add('flex')
+                }else{
+                    console.log('t');
+                }
+            }else{
+                console.log('h');
             }
 
             if(this.getRemoveBottomBorder === true){

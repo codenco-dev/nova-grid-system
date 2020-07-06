@@ -39,6 +39,17 @@
             if (this.hasSize) {
                 this.$parent.$parent.$el.classList.add('flex-wrap')
                 this.$parent.$parent.$el.classList.add('flex')
+                if(document.getElementsByClassName('relationship-tabs-panel')){
+                    console.log(document.getElementsByClassName('relationship-tabs-panel'))
+                    console.log(this.$parent.$parent.$el)
+                    document.getElementsByClassName('relationship-tabs-panel')
+                        .item(0).classList.add('w-full')
+                    this.$parent.$el.parentElement.classList.add('flex')
+                }else{
+                    console.log('t');
+                }
+            }else{
+                console.log('h');
             }
             if(this.getRemoveBottomBorder === true){
                 this.$el.children[0].classList.add('remove-bottom-border')
