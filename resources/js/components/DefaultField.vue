@@ -52,15 +52,14 @@
             if(this.hasSize) {
                 this.$parent.$parent.$el.classList.add('flex-wrap')
                 this.$parent.$parent.$el.classList.add('flex')
+                // Use for eminiarts/nova-tabs package
                 if(document.getElementsByClassName('relationship-tabs-panel')){
-                    console.log(document.getElementsByClassName('relationship-tabs-panel'))
-                    this.$parent.$el.classList.add('flex')
-                    this.$parent.$parent.$parent.$parent.$el.classList.add('flex')
-                }else{
-                    console.log('t');
+                    var tabs = document.getElementsByClassName('relationship-tabs-panel')
+                    for(var i = 0; i < tabs.length; i++) {
+                        tabs.item(i).className += " w-full"
+                    }
+                    this.$parent.$el.parentElement.classList.add('flex')
                 }
-            }else{
-                console.log('h');
             }
 
             if(this.getRemoveBottomBorder === true){
