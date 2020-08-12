@@ -46,6 +46,7 @@
                         tabs.item(i).className += " w-full"
                     }
                     this.$parent.$el.parentElement.classList.add('flex')
+                    this.$parent.$el.parentElement.classList.add('flex-wrap')
                 }
             }
 
