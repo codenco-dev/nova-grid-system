@@ -7,7 +7,7 @@
                             :label-for="field.attribute"
                             :class="{ 'mb-2': showHelpText && field.helpText }"
                     >
-                        {{ fieldLabel }}
+                        {{ fieldLabel }}fff
 
                         <span v-if="field.required" class="text-danger text-sm">{{
             __('*')
@@ -50,6 +50,7 @@
         mounted() {
             // If field has a size, this allows to use flex on card
             if(this.hasSize) {
+                this.$parent.$parent.$el.classList.add('flex-dom')
                 this.$parent.$parent.$el.classList.add('flex-wrap')
                 this.$parent.$parent.$el.classList.add('flex')
                 // Use for eminiarts/nova-tabs package
@@ -61,6 +62,10 @@
                     this.$parent.$el.parentElement.classList.add('flex')
                     this.$parent.$el.parentElement.classList.add('flex-wrap')
                 }
+              if(document.getElementsByClassName('action').length > 0){
+                document.getElementsByClassName('action').item(0).parentElement.classList.add('flex')
+                document.getElementsByClassName('action').item(0).parentElement.classList.add('flex-wrap')
+              }
             }
 
             if(this.getRemoveBottomBorder === true){
