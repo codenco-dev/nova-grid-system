@@ -7,7 +7,7 @@
                             :label-for="field.attribute"
                             :class="{ 'mb-2': showHelpText && field.helpText }"
                     >
-                        {{ fieldLabel }}fff
+                        {{ fieldLabel }}
 
                         <span v-if="field.required" class="text-danger text-sm">{{
             __('*')
