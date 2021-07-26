@@ -15,7 +15,6 @@ class NovaGridSystem extends Tool
     public function boot()
     {
         Nova::script('nova-grid-system', __DIR__.'/../dist/js/tool.js');
-        Nova::style('nova-grid-system', __DIR__.'/../dist/css/tool.css');
     }
 
     /**
