@@ -4,6 +4,7 @@ namespace CodencoDev\NovaGridSystem;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
+use Illuminate\Http\Request;
 
 class NovaGridSystem extends Tool
 {
@@ -27,4 +28,7 @@ class NovaGridSystem extends Tool
     {
         return;
     }
+
+    public function menu(Request $request) {}
+
 }
