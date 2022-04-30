@@ -5,6 +5,7 @@ namespace CodencoDev\NovaGridSystem;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 use Illuminate\Http\Request;
+use Laravel\Nova\Menu\MenuSection;
 
 class NovaGridSystem extends Tool
 {
@@ -19,16 +20,11 @@ class NovaGridSystem extends Tool
         Nova::style('nova-grid-system', __DIR__.'/../dist/css/tool.css');
     }
 
-    /**
-     * Build the view that renders the navigation links for the tool.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function renderNavigation()
+    public function menu(Request $request)
+
     {
-        return;
+        
     }
 
-    public function menu(Request $request) {}
 
 }
