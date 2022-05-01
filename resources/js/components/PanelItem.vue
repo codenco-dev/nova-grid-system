@@ -1,10 +1,13 @@
 <template>
     <div :class="elementSize">
+        
         <field-wrapper :stacked="field.stacked">
-            <div class="" :class="field.stacked ? 'pt-6 w-full' : 'py-4 w-1/4'">
-                <slot>
-                    <h4 class="font-normal text-80">{{ label }}</h4>
-                </slot>
+            <div :class="field.stacked ? 'md:pt-6 md:w-full' : 'md:py-4 md:w-1/4'">
+                <div class="">
+                    <slot>
+                        <h4 class="font-normal text-80">{{ label }}</h4>
+                    </slot>
+                </div>
             </div>
             <div class="py-4 break-words" :class="fieldClasses">
                 <slot name="value">
