@@ -48,11 +48,18 @@ export default {
   },
 
   mounted() {
+    // if (!this.hasSize) {
+    //   this.$el.parentElement.classList.add("flex");
+    //   this.$el.parentElement.classList.add("w-full");
+    // }
+
+
     // If field has a size, this allows to use flex on card
-    if (this.hasSize & this.$parent.$parent.$el) {
+    if (this.hasSize & this.$parent.$parent.$parent.selectedTab === undefined) {
       this.$parent.$parent.$el.classList.add("flex-dom");
       this.$parent.$parent.$el.classList.add("flex-wrap");
       this.$parent.$parent.$el.classList.add("flex");
+
     }
 
     //Use for eminiarts/nova-tabs package
@@ -62,8 +69,8 @@ export default {
     ) {
       this.$el.classList.remove(this.elementSize);
       this.$el.classList.add("w-full");
-      this.$el.parentElement.classList.add(this.elementSize);
       this.$el.parentElement.classList.add("inline-block");
+      this.$el.parentElement.classList.add(this.elementSize);
     }
 
     if (this.getRemoveBottomBorder === true) {
