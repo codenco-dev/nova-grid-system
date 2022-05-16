@@ -35898,11 +35898,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    // if (!this.hasSize) {
-    //   this.$el.parentElement.classList.add("flex");
-    //   this.$el.parentElement.classList.add("w-full");
-    // }
-    // If field has a size, this allows to use flex on card
+    if (!this.hasSize) {
+      this.$el.parentElement.classList.add("w-full");
+    } // If field has a size, this allows to use flex on card
+
+
     if (this.hasSize & this.$parent.$parent.$parent.selectedTab === undefined) {
       this.$parent.$parent.$el.classList.add("flex-dom");
       this.$parent.$parent.$el.classList.add("flex-wrap");

@@ -48,10 +48,10 @@ export default {
   },
 
   mounted() {
-    // if (!this.hasSize) {
-    //   this.$el.parentElement.classList.add("flex");
-    //   this.$el.parentElement.classList.add("w-full");
-    // }
+    if (!this.hasSize) {
+      
+      this.$el.parentElement.classList.add("w-full");
+    }
 
 
     // If field has a size, this allows to use flex on card
