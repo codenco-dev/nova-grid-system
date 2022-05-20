@@ -35834,23 +35834,7 @@ module.exports = Vue;
   \******************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-// import DefaultField from './components/DefaultField'
-// import PanelItem from './components/PanelItem'
-// import DetailHeadingField from './components/Detail/HeadingField'
-// import FormHeadingField from './components/Form/HeadingField'
-var Vue = __webpack_require__(/*! @vue/compat/dist/vue.cjs.prod */ "../../node_modules/@vue/compat/dist/vue.cjs.prod.js"); // Nova.booting((app, store) => {
-//   app.component('default-field', DefaultField)
-//   app.component('panel-item', PanelItem)
-//   app.component('detail-heading-field', DetailHeadingField)
-//   app.component('form-heading-field', FormHeadingField)
-// })
-// Nova.booting((Vue, router, store) => {
-//   Vue.component('default-field', DefaultField)
-//   Vue.component('panel-item', PanelItem)
-//   Vue.component('detail-heading-field', DetailHeadingField)
-//   Vue.component('form-heading-field', FormHeadingField)
-// })
-
+var Vue = __webpack_require__(/*! @vue/compat/dist/vue.cjs.prod */ "../../node_modules/@vue/compat/dist/vue.cjs.prod.js");
 
 Nova.booting(function (Vue) {
   Vue.component("DefaultField", (__webpack_require__(/*! ./components/DefaultField */ "./resources/js/components/DefaultField.vue")["default"]));
@@ -35911,40 +35895,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
     if (this.hasSize & this.$parent.$parent.$parent.selectedTab !== undefined) {
-      this.$el.classList.remove(this.elementSize);
-      this.$el.classList.add("w-full");
-      this.$el.parentElement.classList.add("inline-block");
-      this.$el.parentElement.classList.add(this.elementSize);
+      this.$el.classList.add("inline-block");
     }
 
     if (this.getRemoveBottomBorder === true) {
       this.$el.children[0].classList.add("remove-bottom-border");
     } else if (this.getRemoveBottomBorder === false) {
       this.$el.children[0].classList.remove("remove-bottom-border");
-    } //Use for eminiarts/nova-tabs package
-    // if (this.hasSize) {
-    //   if (document.getElementsByClassName("tab-card")) {
-    //     //console.log(this.$parent.$el.parentElement.parentElement.parentElement.parentElement);
-    //     var tabs = document.getElementsByClassName("tab-card");
-    //     for (var i = 0; i < tabs.length; i++) {
-    //       tabs.item(i).className += " w-full";
-    //     }
-    //     this.$parent.$el.parentElement.classList.add("flex");
-    //     this.$parent.$el.parentElement.classList.add("flex-wrap");
-    //   }
-    //   if (document.getElementsByClassName("action").length > 0) {
-    //     document
-    //       .getElementsByClassName("action")
-    //       .item(0)
-    //       .parentElement.classList.add("flex");
-    //     document
-    //       .getElementsByClassName("action")
-    //       .item(0)
-    //       .parentElement.classList.add("flex-wrap");
-    //   }
-    // }
-    //
-
+    }
   },
   computed: {
     /**

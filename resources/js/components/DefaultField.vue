@@ -67,10 +67,7 @@ export default {
       this.hasSize &
       (this.$parent.$parent.$parent.selectedTab !== undefined)
     ) {
-      this.$el.classList.remove(this.elementSize);
-      this.$el.classList.add("w-full");
-      this.$el.parentElement.classList.add("inline-block");
-      this.$el.parentElement.classList.add(this.elementSize);
+       this.$el.classList.add("inline-block");
     }
 
     if (this.getRemoveBottomBorder === true) {
@@ -79,31 +76,7 @@ export default {
       this.$el.children[0].classList.remove("remove-bottom-border");
     }
 
-    //Use for eminiarts/nova-tabs package
-    // if (this.hasSize) {
-    //   if (document.getElementsByClassName("tab-card")) {
-
-    //     //console.log(this.$parent.$el.parentElement.parentElement.parentElement.parentElement);
-    //     var tabs = document.getElementsByClassName("tab-card");
-    //     for (var i = 0; i < tabs.length; i++) {
-    //       tabs.item(i).className += " w-full";
-    //     }
-    //     this.$parent.$el.parentElement.classList.add("flex");
-    //     this.$parent.$el.parentElement.classList.add("flex-wrap");
-    //   }
-    //   if (document.getElementsByClassName("action").length > 0) {
-    //     document
-    //       .getElementsByClassName("action")
-    //       .item(0)
-    //       .parentElement.classList.add("flex");
-    //     document
-    //       .getElementsByClassName("action")
-    //       .item(0)
-    //       .parentElement.classList.add("flex-wrap");
-    //   }
-    // }
-
-    //
+   
   },
 
   computed: {
