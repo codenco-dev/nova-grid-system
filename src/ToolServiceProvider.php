@@ -17,21 +17,23 @@ class ToolServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
+     *
+     * @return void
      */
-    public function boot(): void
+    public function boot()
     {
         $this->publishConfiguration();
         $this->bootMacros();
     }
 
-    protected function publishConfiguration(): void
+    protected function publishConfiguration()
     {
         $this->publishes([
             __DIR__.'/../config/nova-grid-system.php' => config_path('nova-grid-system.php'),
         ], 'nova-grid-system');
     }
 
-    protected function bootMacros(): void
+    protected function bootMacros()
     {
         $request = fn () => resolve(NovaRequest::class);
 
@@ -43,7 +45,7 @@ class ToolServiceProvider extends ServiceProvider
         $this->bootDetailMacros();
     }
 
-    protected function bootHelperMacros(): void
+    protected function bootHelperMacros()
     {
         NovaRequest::macro('getRequestType', function () {
             $requestType = '';
@@ -91,7 +93,7 @@ class ToolServiceProvider extends ServiceProvider
         });
     }
 
-    protected function bootGlobalMacros(): void
+    protected function bootGlobalMacros()
     {
         Field::macro('size', function ($size = 'w-full') {
             if ($this->isRequestActivate('size','all', $scope = true)) {
@@ -108,7 +110,7 @@ class ToolServiceProvider extends ServiceProvider
         });
     }
 
-    protected function bootCreatingMacros(): void
+    protected function bootCreatingMacros()
     {
         Field::macro('sizeOnCreating', function ($size = 'w-full') {
             if ($this->isRequestActivate('size','creating')) {
@@ -138,7 +140,7 @@ class ToolServiceProvider extends ServiceProvider
         });
     }
 
-    protected function bootUpdatingMacros(): void
+    protected function bootUpdatingMacros()
     {
         Field::macro('sizeOnUpdating', function ($size = 'w-full') {
             if ($this->isRequestActivate('size','updating')) {
@@ -162,7 +164,7 @@ class ToolServiceProvider extends ServiceProvider
         });
     }
 
-    protected function bootFormMacros(): void
+    protected function bootFormMacros()
     {
         Field::macro('sizeOnForms', function ($size = 'w-full') {
             if ($this->isRequestActivate('size','forms')) {
@@ -186,7 +188,7 @@ class ToolServiceProvider extends ServiceProvider
         });
     }
 
-    protected function bootDetailMacros(): void
+    protected function bootDetailMacros()
     {
         Field::macro('sizeOnDetail', function ($size = 'w-full') {
             if ($this->isRequestActivate('size','detail')) {
@@ -212,8 +214,10 @@ class ToolServiceProvider extends ServiceProvider
 
     /**
      * Register any application services.
+     *
+     * @return void
      */
-    public function register(): void
+    public function register()
     {
         //
     }
