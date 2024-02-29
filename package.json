@@ -21,6 +21,8 @@
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.11.0",
+        "@vue/compat": "^3.4.21",
+        "form-backend-validation": "^2.4.0",
         "vue": "^3.0",
         "vuex": "^4.0.2"
     }

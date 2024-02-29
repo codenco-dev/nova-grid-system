@@ -25,8 +25,7 @@
           {{ firstError }}
         </help-text>
 
-        <help-text class="help-text mt-2" v-if="showHelpText">
-          {{ field.helpText }}
+        <help-text class="help-text mt-2" v-if="showHelpText" v-html="field.helpText">
         </help-text>
       </div>
     </field-wrapper>
@@ -49,7 +48,7 @@ export default {
 
   mounted() {
     if (!this.hasSize) {
-      
+
       this.$el.parentElement.classList.add("w-full");
     }
 
@@ -76,7 +75,7 @@ export default {
       this.$el.children[0].classList.remove("remove-bottom-border");
     }
 
-   
+
   },
 
   computed: {

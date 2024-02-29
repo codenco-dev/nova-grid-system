@@ -1,5 +1,13 @@
 /*!
- * vuex v4.0.2
- * (c) 2021 Evan You
+ * vuex v4.1.0
+ * (c) 2022 Evan You
  * @license MIT
  */
+
+/*! #__NO_SIDE_EFFECTS__ */
+
+/**
+* @vue/compat v3.4.21
+* (c) 2018-present Yuxi (Evan) You and Vue contributors
+* @license MIT
+**/
